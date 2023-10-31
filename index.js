@@ -9,13 +9,13 @@ const calculate = (button) => {
 
     if(value === "CLEAR"){
         calculation = []
-        screenDisplay.textContent = '.'
+        screenDisplay.innerHTML = '.'
     }else if(value === "="){
-        screenDisplay.textContent = eval(accumulativeCalculation)
+        screenDisplay.innerHTML = eval(accumulativeCalculation)
     } else{
         calculation.push(value)
         accumulativeCalculation = calculation.join('')
-        screenDisplay.textContent = accumulativeCalculation
+        screenDisplay.innerHTML = accumulativeCalculation
     }
 }
 
