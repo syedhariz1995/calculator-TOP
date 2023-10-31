@@ -12,6 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: darkcyan;
 }
 
 
@@ -22,8 +23,18 @@ body{
     border-radius: 10px;
 }
 
+.screen{
+    width: 224px;
+    background-color: rgb(176,285,176);
+    font-size: 40px;
+    text-align: end;
+    padding: 4px;
+}
+
 .buttons{
-    width: 230px;
+    width: 232px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 button{
@@ -37,6 +48,29 @@ button{
     margin: 4px;
 }
 
-.screen{
-    
+button:hover{
+    background-color: rgb(111,110,110);
+}
+
+button:active{
+    background-color: rgb(232,232,232);
+}
+
+#equals{
+    background-color: rgb(218,2,2);
+}
+
+#equals:hover{
+    background-color: rgb(198,1,1);
+}
+
+#clear{
+    width: 100%;
+    border: none;
+    background-color: rgb(252,226,27);
+    font-size: 30px;
+}
+
+#clear:hover{
+    background-color: rgb(252,201,17);
 }
