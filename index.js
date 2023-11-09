@@ -1,5 +1,5 @@
 const screen = document.querySelector('.screen');
-const buttons = document.querySelectorAll('.buttons button');
+const buttons = document.querySelectorAll('button');
 const clearButton = document.querySelector('#clear');
 const equalsButton = document.querySelector('#equals');
 
