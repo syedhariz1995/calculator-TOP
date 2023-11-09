@@ -1,22 +1,48 @@
-const buttons = document.querySelectorAll('button')
-const screenDisplay = document.querySelector('.screen')
+const screen = document.querySelector('.screen');
+const buttons = document.querySelectorAll('.buttons button');
+const clearButton = document.querySelector('#clear');
+const equalsButton = document.querySelector('#equals');
 
-let calculation = []
-let accumulativeCalculation
+let currentInput = '';
+let previousInput = '';
+let operation = '';
 
-const calculate = (button) => {
-    const value = button.textContent
-
-    if(value === "CLEAR"){
-        calculation = []
-        screenDisplay.innerHTML = '.'
-    }else if(value === "="){
-        screenDisplay.innerHTML = eval(accumulativeCalculation)
-    } else{
-        calculation.push(value)
-        accumulativeCalculation = calculation.join('')
-        screenDisplay.innerHTML = accumulativeCalculation
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.textContent === '+' || button.textContent === '-' || button.textContent === '*' || button.textContent === '/') {
+      operation = button.textContent;
+      previousInput = currentInput;
+      currentInput = '';
+      screen.textContent = previousInput + operation;
+    } else if (button.textContent === '.') {
+      if (currentInput.includes('.')) {
+        return;
+      } else {
+        currentInput += button.textContent;
+      }
+    } else if (button.textContent === '=') {
+      if (operation === '+') {
+        currentInput = parseFloat(previousInput) + parseFloat(currentInput);
+      } else if (operation === '-') {
+        currentInput = parseFloat(previousInput) - parseFloat(currentInput);
+      } else if (operation === '*') {
+        currentInput = parseFloat(previousInput) * parseFloat(currentInput);
+      } else if (operation === '/') {
+        currentInput = parseFloat(previousInput) / parseFloat(currentInput);
+      }
+      operation = '';
+      previousInput = '';
+      screen.textContent = currentInput;
+    } else {
+      currentInput += button.textContent;
+      screen.textContent = currentInput;
     }
-}
+  });
+});
 
-buttons.forEach(button => button.addEventListener('click', () => calculate(button)))
+clearButton.addEventListener('click', () => {
+  currentInput = '';
+  previousInput = '';
+  operation = '';
+  screen.textContent = '.';
+});
