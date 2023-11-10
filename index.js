@@ -6,6 +6,7 @@ const equalsButton = document.querySelector('#equals');
 let currentInput = '';
 let previousInput = '';
 let operation = '';
+let result = ''; // Initialize result as an empty string
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
@@ -22,17 +23,17 @@ buttons.forEach(button => {
       }
     } else if (button.textContent === '=') {
       if (operation === '+') {
-        currentInput = parseFloat(previousInput) + parseFloat(currentInput);
+        result = parseFloat(previousInput) + parseFloat(currentInput);
       } else if (operation === '-') {
-        currentInput = parseFloat(previousInput) - parseFloat(currentInput);
+        result = parseFloat(previousInput) - parseFloat(currentInput);
       } else if (operation === '*') {
-        currentInput = parseFloat(previousInput) * parseFloat(currentInput);
+        result = parseFloat(previousInput) * parseFloat(currentInput);
       } else if (operation === '/') {
-        currentInput = parseFloat(previousInput) / parseFloat(currentInput);
+        result = parseFloat(previousInput) / parseFloat(currentInput);
       }
       operation = '';
       previousInput = '';
-      screen.textContent = currentInput;
+      screen.textContent = result.toString(); // Update the screen with the result
     } else {
       currentInput += button.textContent;
       screen.textContent = currentInput;
@@ -44,5 +45,6 @@ clearButton.addEventListener('click', () => {
   currentInput = '';
   previousInput = '';
   operation = '';
+  result = ''; // Reset result to an empty string
   screen.textContent = '.';
 });
