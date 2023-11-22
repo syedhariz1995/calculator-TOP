@@ -13,14 +13,18 @@ let result = null
 let lastOperation = ''
 let isDot = false
 
+
 numbers.forEach(number => {
     number.addEventListener('click', (e) => {
-        if(e.target.innerText === '.' && !isDot){
+        if(e.target.innerText === '.' && !isDot){ 
             isDot = true
-        }else if(e.target.innerText === "." && isDot){
+        }else if(e.target.innerText === "." && isDot){ 
             return
         }
         display2Num += e.target.innerText
         display2.innerText = display2Num
+        
     })
 })
+
+
