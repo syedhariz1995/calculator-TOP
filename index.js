@@ -26,5 +26,3 @@ numbers.forEach(number => {
         
     })
 })
-
-
