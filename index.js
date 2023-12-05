@@ -42,6 +42,7 @@ operations.forEach(operation => {
     })
 })
 
+
 const clearVar = (oprName = '') => {
     display1Num += display2Num + ' ' + oprName + ' '
     display1.innerText = display1Num
@@ -143,6 +144,7 @@ const clickNumber = (key) => {
     })
 }
 
+
 const clickOperation = (key) => {
     operations.forEach(button => {
         if(button.innerText === key){
@@ -150,6 +152,7 @@ const clickOperation = (key) => {
         }
     })
 }
+
 
 const clickEqual = () => {
     equal.click()
