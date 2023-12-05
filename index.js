@@ -47,7 +47,7 @@ const clearVar = (oprName = '') => {
     display1.innerText = display1Num
     display2.innerText = ''
     display2Num = ''
-    tempResult.innerText = result
+    tempResult.innerText = result 
 }
 
 
