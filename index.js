@@ -86,3 +86,9 @@ clearAll.addEventListener('click', (e) => {
     tempResult.innerText = '0'
     result = ''
 })
+
+
+clearLast.addEventListener('click', (e) => {
+    display2.innerText = ''
+    display2Num = ''
+})
