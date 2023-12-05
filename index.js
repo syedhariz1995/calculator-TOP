@@ -4,8 +4,8 @@ const tempResult = document.querySelector('.temp-result')
 const numbers = document.querySelectorAll('.number')
 const operations = document.querySelectorAll('.operation')
 const equal = document.querySelector('.equal')
-const clear = document.querySelector('.all-clear')
-const lastEntityClear = document.querySelector('.last-entity-clear')
+const clearAll = document.querySelector('.all-clear')
+const clearLast = document.querySelector('.last-entity-clear')
 
 let display1Num = ''
 let display2Num = ''
@@ -75,4 +75,14 @@ equal.addEventListener('click', (e) => {
     tempResult.innerText = ''
     display2Num = result
     display1Num = ''
+})
+
+
+clearAll.addEventListener('click', (e) => {
+    display1.innerText = '0'
+    display1Num = ''
+    display2.innerText = '0'
+    display2Num = ''
+    tempResult.innerText = '0'
+    result = ''
 })
