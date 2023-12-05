@@ -93,6 +93,15 @@ clearLast.addEventListener('click', (e) => {
     display2Num = ''
 })
 
+
+
+
+
+
+
+
+// KEYBOARD FUNCTIONALITY
+
 window.addEventListener('keydown', (e) =>{
    if(
     e.key === '0' || 
