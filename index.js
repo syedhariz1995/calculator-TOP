@@ -69,7 +69,7 @@ const mathOperation = () => {
 
 equal.addEventListener('click', (e) => {
     if(!display1Num || !display2Num) return
-    isDot = false
+    // isDot = false
     mathOperation()
     clearVar()
     display2.innerText = result
